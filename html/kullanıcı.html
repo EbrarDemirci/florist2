@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registration</title>
+    <link rel="stylesheet" href="kullanici.css">
+</head>
+<body>
+    <section class="intro">
+        <div class="video-container">
+            <video src="videocicek.mp4" autoplay loop muted playsinline></video>
+        </div>
+        <div class="content">
+            <h1>HOŞ GELDİNİZ </h1>
+            <h4>ÇİÇEK GİBİ BİR DÜNYA!!!</h4>
+            <a href="#login" class="read-more">Giriş Yapmak İçin Tıklayınız</a>
+        </div>
+    </section>
+    
+    <div class="container" id="login">
+        <div id="LoginAndRegistrationForm">
+            <h1 id="formTitle">Merhaba, Floriste Giriş Yap veya Hesap Oluştur Çiçeksiz Kalma !!!</h1>
+            <div id="formSwitchBtn">
+                <button onclick="ShowLoginForm()" id="ShowLoginBtn" class="active">Giriş Yap</button>
+                <button onclick="ShowRegistrationForm()" id="ShowRegistrationBtn">Kayıt Ol</button>
+            </div>
+            <div id="LoginFrom">
+                <form action="#">
+                    <input id="LoginEmail" class="input-text" type="text" placeholder="Email Address">
+                    <input id="LoginPassword" class="input-text" type="password" placeholder="Password">
+                    <div class="remember-me">
+                        <input id="rememberMe" type="checkbox">
+                        <label for="rememberMe">Beni Hatırla</label>
+                    </div>
+                    <input class="Submit-Btn" type="submit" value="Giriş Yap">
+                </form>
+
+                <!-- Şifremi Unuttum Bağlantısı Eklendi, JS ile işlem yapacak -->
+                <p class="forgot-password">
+                    <a href="JavaScript:void(0);" onclick="showPasswordReset()">Şifremi Unuttum</a>
+                </p>
+
+                <p class="already-have-account">
+                    <a href="JavaScript:void(0);" onclick="ShowRegistrationForm()">Hesabın yok mu ? kayıt ol</a>
+                </p> 
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+
+    <script>
+        // Şifremi Unuttum linkine tıklandığında, giriş formunu değiştirecek
+        function showPasswordReset() {
+            const loginForm = document.getElementById("LoginFrom");
+            loginForm.innerHTML = `
+                <h2>Şifre Sıfırlama</h2>
+                <form action="#">
+                    <input type="email" class="input-text" placeholder="E-posta Adresinizi Girin" required>
+                    <input class="Submit-Btn" type="submit" value="Şifreyi Sıfırla">
+                </form>
+                <p><a href="JavaScript:void(0);" onclick="ShowLoginForm()">Giriş Sayfasına Geri Dön</a></p>
+            `;
+        }
+
+        // Diğer formu gösterme işlemleri
+        function ShowLoginForm() {
+            const loginForm = document.getElementById("LoginFrom");
+            loginForm.innerHTML = `
+                <form action="#">
+                    <input id="LoginEmail" class="input-text" type="text" placeholder="Email Address">
+                    <input id="LoginPassword" class="input-text" type="password" placeholder="Password">
+                    <div class="remember-me">
+                        <input id="rememberMe" type="checkbox">
+                        <label for="rememberMe">Beni Hatırla</label>
+                    </div>
+                    <input class="Submit-Btn" type="submit" value="Giriş Yap">
+                </form>
+                <p class="forgot-password">
+                    <a href="JavaScript:void(0);" onclick="showPasswordReset()">Şifremi Unuttum</a>
+                </p>
+                <p class="already-have-account">
+                    <a href="JavaScript:void(0);" onclick="ShowRegistrationForm()">Hesabın yok mu ? kayıt ol</a>
+                </p>
+            `;
+        }
+
+        // Kayıt Formu
+        function ShowRegistrationForm() {
+            const loginForm = document.getElementById("LoginFrom");
+            loginForm.innerHTML = `
+                <h1>Kayıt Ol</h1>
+                <form action="#">
+                    <input id="RegName" class="input-text" type="text" placeholder="Adınız" required>
+                    <input id="RegSurname" class="input-text" type="text" placeholder="Soyadınız" required>
+                    <input id="RegAge" class="input-text" type="number" placeholder="Yaşınız" required>
+                    <input id="RegEmail" class="input-text" type="email" placeholder="Email Address" required>
+                    <input id="RegPassword" class="input-text" type="password" placeholder="Şifrenizi Oluşturun" required>
+                    <input id="RegConfirmPassword" class="input-text" type="password" placeholder="Şifrenizi Tekrar Girin" required>
+                    <input class="Submit-Btn" type="submit" value="Kayıt Ol">
+                </form>
+                <p class="already-have-account">
+                    <a href="JavaScript:void(0);" onclick="ShowLoginForm()">Zaten hesabınız var mı ? Giriş yap</a>
+                </p>
+            `;
+        }
+    </script>
+</body>
+</html>
