@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Times New Roman", Georgia, serif;
+}
+
+body {
+    line-height: 1.5;
+    background: #f8c9cb;
+}
+
+/* Giriş Bölümü */
+.intro {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.intro h1 {
+    font-family: "Times New Roman", Georgia, serif;
+    font-size: 8rem; /* Yazı boyutunu büyütür */
+    font-weight: bold; /* Yazıyı kalın yapar */
+    color: #02155a; /* Yazı rengini beyaz yapar */
+    text-transform: uppercase; /* Yazıyı büyük harfe dönüştürür */
+}
+.intro h4 {
+    font-family: "Times New Roman", Georgia, serif;
+    font-size: 4rem; /* Yazı boyutunu büyütür */
+    font-weight: normal; /* Yazıyı normal kalınlıkta yapar */
+    color: #02155a; /* Yazı rengini beyaz yapar */
+    margin-top: 10px; /* Üstten biraz boşluk bırakır */
+}
+
+/* Video Arka Plan */
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.video-container video {
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.video-container:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+}
+
+/* İçerik */
+.content {
+    z-index: 2;
+    position: relative;
+}
+
+.read-more {
+    display: inline-block;
+    padding: 0px 10px;
+    background: #fde9ff;
+    color: #6141ac;
+    border-radius: 5px;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: .2s all;
+
+     /* Yazı tipi ve boyutunu değiştireceğiz */
+     font-family: 'Nunito Sans', sans-serif; /* Yazı tipi değişikliği */
+     font-size: 1.3rem; /* Yazı boyutunu ayarlıyoruz */
+}
+
+.read-more:hover {
+    transform: scale(.9);
+    transform: scale(.9);
+    /* Hover'da renk değişikliği isterseniz aşağıdaki gibi ekleyebilirsiniz */
+    color: #6141ac; /* Hover durumunda yazı rengini aynı tutabilirsiniz */
+}
+
+/* Giriş Formu */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#LoginAndRegistrationForm {
+    width: 450px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 6px 0px #cdcdcd;
+    text-align: center;
+}
+
+#formSwitchBtn {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#formSwitchBtn button {
+    width: 160px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #ec8792;
+    transition: 0.4s;
+}
+
+#formSwitchBtn .active {
+    background: #ec8792;
+    color: #fff;
+}
+
+.input-text {
+    width: 100%;
+    height: 38px;
+    border: 1px solid #ec8792;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.input-text:focus {
+    outline: none;
+}
+
+.remember-me {
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.Submit-Btn {
+    width: 100%;
+    height: 42px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 17px;
+    background-color: #ec8792;
+    color: #fff;
+    transition: 0.4s;
+}
+
+.Submit-Btn:hover {
+    background-color: #ec8792;
+}
+
+.already-have-account {
+    font-size: 14px;
+    color: #747474;
+}
+
+.already-have-account a {
+    text-decoration: none;
+    color: #002b27;
+    font-weight: bold;
+    transition: 0.4s;
+}
+
+.already-have-account a:hover {
+    color: #61874d;
+}
+
+/* Şifremi Unuttum Bağlantısı */
+.forgot-password a {
+    text-decoration: none;
+    color: #002b27; /* Diğer bağlantılar gibi renk */
+    font-weight: bold;
+    transition: 0.3s all;
+}
+
+.forgot-password a:hover {
+    color: #61874d; /* Diğer bağlantılar gibi hover rengi */
+    text-decoration: none; /* Altı çizili olmasın */
+}
+
+/* Giriş Anasayfasına Geri Dön Bağlantısı */
+.back-to-home a {
+    text-decoration: none;
+    color: #002b27; /* Diğer bağlantılar gibi renk */
+    font-weight: bold;
+    transition: 0.3s all;
+}
+
+.back-to-home a:hover {
+    color: #61874d; /* Diğer bağlantılar gibi hover rengi */
+    text-decoration: none; /* Altı çizili olmasın */
+}
+/* Kullanıcı Girişinin üstündeki başlık */
+#formTitle {
+    font-size: 1.5rem; /* Yazı boyutunu küçültüyoruz */
+    font-family: 'Nunito Sans', sans-serif; /* Yazı tipini ayarlıyoruz */
+    font-weight: bold; /* Yazıyı kalın yapıyoruz */
+    color: #333; /* Yazı rengini değiştiriyoruz (örneğin koyu gri) */
+    text-align: center; /* Metni ortalıyoruz */
+    margin-bottom: 20px; /* Başlık ile içerik arasında boşluk bırakıyoruz */
+}
+
+body {
+    background-image: url('2.jpg'); /* Resmin yolunu buraya yaz */
+    background-size: cover; /* Ekrana tam oturur */
+    background-position: center; /* Ortalar */
+    background-attachment: fixed; /* Sayfa kaydırılsa bile sabit kalır */
+}
